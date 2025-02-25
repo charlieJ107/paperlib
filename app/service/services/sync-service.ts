@@ -247,9 +247,9 @@ export class SyncService extends Eventable<ISyncServiceState> {
       PLAPILocal.schedulerService.createTask(
         "syncService.refresh",
         this.refreshAuth.bind(this),
-        // 600, // Try to refresh in 10 minutes, can set the strategy as needed
+        600, // Try to refresh in 10 minutes, can set the strategy as needed
         // For testing convenience, change to 10 seconds
-        10,
+        // 10,
         undefined,
         false,
         false
@@ -266,9 +266,9 @@ export class SyncService extends Eventable<ISyncServiceState> {
     PLAPILocal.schedulerService.createTask(
       "syncService.invokeSync",
       this.invokeSync.bind(this),
-      // 10, // Try to sync after 10 seconds
+      30, // Try to sync after 10 seconds
       // For testing convenience, change to 1 second
-      1,
+      // 1,
       undefined,
       false,
       false
